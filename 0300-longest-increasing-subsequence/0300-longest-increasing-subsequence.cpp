@@ -13,6 +13,6 @@ public:
             }
         }
        }
-        return tmp[n-1];
+     return *max_element(tmp.begin(), tmp.end());
     }
 };
