@@ -1,20 +1,44 @@
 class Solution {
 public:
+    int minKadaneAlgo(vector<int>nums,int n){
+         int maxi=INT_MIN;
+     int sum=0;
+
+     for(int i=0;i<n;i++){
+        sum+=nums[i];
+        maxi=max(maxi,sum);
+
+        if(sum<0){
+            sum=0;
+        }
+
+    
+     }
+        return maxi;
+    }
+    int maxKadaneAlgo(vector<int>nums,int n){
+         int mini=INT_MAX;
+     int sum=0;
+
+     for(int i=0;i<n;i++){
+        sum+=nums[i];
+        mini=min(mini,sum);
+
+        if(sum>0){
+            sum=0;
+        }
+
+    
+     }
+        return mini;
+    }
     int maxAbsoluteSum(vector<int>& nums) {
         int n=nums.size();
-        if(n==1){
-            return abs(nums[0]);
-        }
-   int maxi=0;
-        for(int i=0;i<n;i++){
-            int sum=nums[i];
-            for(int j=i+1;j<n;j++){
-                maxi=max(maxi,abs(sum));
-                sum+=nums[j];
-                maxi=max(maxi,abs(sum));
-            }
-        }
-        return maxi;
-        
+        int a=maxKadaneAlgo(nums,n);
+        int b=minKadaneAlgo(nums,n);
+
+        return max(abs(a),abs(b));
     }
+
+    
 };
