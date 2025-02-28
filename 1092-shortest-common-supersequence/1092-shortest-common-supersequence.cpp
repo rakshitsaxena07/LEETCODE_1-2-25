@@ -28,14 +28,17 @@ public:
   int i = n;
   int j = m;
 
-  int index = len - 1;
+  
   string ans = "";
+
+  //Backtracking
+  
 /*If characters are equal, they are part of LCS, so add them to ans and move diagonally.
 If not equal, move in the direction of the greater value in dp[][], and add the respective character to ans*/
   while (i > 0 && j > 0) {
     if (s1[i - 1] == s2[j - 1]) {
       ans += s1[i-1];
-     // index--;
+ 
       i--;
       j--;
     } else if (dp[i - 1][j] > dp[i][j - 1]) {
