@@ -16,9 +16,9 @@ public:
                 if (c % 2 != 0) continue;     // Must be even
 
                 int num = a * 100 + b * 10 + c;
-                if(res.find(num)==res.end()){
+                //if(res.find(num)==res.end()){
                     res.insert(num);
-                }
+                //}
             }
         }
     }
