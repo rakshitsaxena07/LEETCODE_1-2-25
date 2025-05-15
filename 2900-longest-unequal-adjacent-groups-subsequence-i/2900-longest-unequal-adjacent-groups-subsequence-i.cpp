@@ -13,12 +13,13 @@ public:
             }
         }
 
-        vector<string>res;
-        while(!st.empty()){
-            pair<string,int> topEle=st.top();
+       
+            vector<string> res;
+        while (!st.empty()) {
+            res.push_back(st.top().first);
             st.pop();
-            res.insert(res.begin(), topEle.first);
         }
+        reverse(res.begin(), res.end());
 
 
         return res;
