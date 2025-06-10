@@ -5,12 +5,7 @@ public:
         for(auto it:s){
             ump[it]++;
         }
-        vector<int>res;
 
-        for(auto it:ump){
-            res.push_back(it.second);
-        }
-        
         int maxi=0,mini=102;
         for(auto it:ump){
             if(it.second %2!=0){
