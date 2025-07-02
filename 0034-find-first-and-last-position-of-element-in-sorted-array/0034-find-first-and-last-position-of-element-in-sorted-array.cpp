@@ -1,21 +1,47 @@
 class Solution {
 public:
+    int lastIndex(vector<int>& nums, int target, int n){
+        int lo=0,hi=n-1;
+        int mid=lo+(hi-lo)/2;
+        int indx=-1;
+        while(lo<=hi){
+                  int mid=lo+(hi-lo)/2;
+            if(target>=nums[mid]){
+                 if (nums[mid] == target)
+                 indx=mid;
+                lo=mid+1;
+            }
+            else{
+                hi=mid-1;
+            }
+        }
+
+        return indx;
+    }
+    int firstIndex(vector<int>& nums, int target, int n){
+                 int lo=0,hi=n-1;
+               
+                 int indx=-1;
+        while(lo<=hi){
+              int mid=lo+(hi-lo)/2;
+            if(target<=nums[mid]){
+                 if (nums[mid] == target)
+                 indx=mid;
+                hi=mid-1;
+            }
+            else{
+                lo=mid+1;
+            }
+        }
+
+        return indx;
+    }
     vector<int> searchRange(vector<int>& nums, int target) {
-        unordered_map<int,vector<int>>ump;
-        vector<int>ans;
-        for(int i=0;i<nums.size();i++){
-            ump[nums[i]].push_back(i);
-        }
-        if(ump.find(target)!=ump.end()){
-            auto& res=ump[target];
-            int n=res.size();
-            ans.push_back(res[0]);
-            ans.push_back(res[n-1]);
+        vector<int>res(2,-1);
+        int n=nums.size();
+        res[0]=firstIndex(nums,target,n);
+        res[1]=lastIndex(nums,target,n);
 
-            return ans;
-
-        }
-
-        return {-1,-1};
+        return res;
     }
 };
