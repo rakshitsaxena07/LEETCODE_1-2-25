@@ -9,7 +9,7 @@ public:
         int count = 0;
         int n = nums.size();
         
-        // Iterate over all possible non-empty subsets
+        
         for (int mask = 1; mask < (1 << n); ++mask) {
             int current_or = 0;
             for (int i = 0; i < n; ++i) {
