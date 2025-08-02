@@ -8,7 +8,7 @@ public:
         return result;
     }
 
-
+private:
      void backtrack(const vector<int>& candidates, int remaining, int start, vector<int>& path, vector<vector<int>>& result) {
         if (remaining == 0) {
             result.push_back(path);
