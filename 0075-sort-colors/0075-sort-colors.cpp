@@ -1,17 +1,22 @@
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
-        map<int,int>mp;
-        int n=nums.size();
-        for(int i=n-1;i>=0;i--){
-            mp[nums[i]]++;
-            nums.pop_back();
+        int j=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]==0){
+                swap(nums[i],nums[j++]);
+            }
         }
-        for(auto it : mp){
-            while(it.second>0){
-                int tmp=it.first;
-                nums.push_back(tmp);
-                it.second--;
+
+         for(int i=0;i<nums.size();i++){
+            if(nums[i]==1  ){
+                swap(nums[i],nums[j++]);
+            }
+        }
+
+         for(int i=0;i<nums.size();i++){
+            if(nums[i]==2 ){
+                swap(nums[i],nums[j++]);
             }
         }
     }
