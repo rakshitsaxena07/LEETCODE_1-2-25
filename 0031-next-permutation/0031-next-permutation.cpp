@@ -23,5 +23,7 @@ public:
     
     // Step 3: Reverse the suffix
     reverse(nums.begin() + pivot + 1, nums.end());
+
+    return;
 }
 };
