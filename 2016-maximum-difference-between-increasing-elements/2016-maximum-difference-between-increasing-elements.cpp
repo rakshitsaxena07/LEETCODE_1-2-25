@@ -11,7 +11,7 @@ public:
             mini = min(mini, nums[i]);
         }
         
-        return maaxiDiff;
+        return maxiDiff;
     }
 };
 
