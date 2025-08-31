@@ -13,8 +13,9 @@ public:
                     startNum+=1;
                     count++;
                 }
-                maxiLen=max(maxiLen,count);
+                //maxiLen=max(maxiLen,count);
             }
+             maxiLen=max(maxiLen,count);
         }
 
         return maxiLen;
